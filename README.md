@@ -26,7 +26,7 @@ Mole.config({url: 'http://errors.example.com/mole'});
 
 ```
 
-To record errors, simply report it.
+To record errors, simply report them.
 
 ```javascript
 import Mole from 'mole.js'
@@ -36,8 +36,6 @@ Mole.report(error);
 ```
 
 In order to record app action-state history, record every action and state.
-
-To record errors, simply report it.
 
 ```javascript
 import Mole from 'mole.js'
