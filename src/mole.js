@@ -36,7 +36,10 @@ const Mole = {
     this.stateHistory.push({action, state});
   },
   report (error) {
-    let report = getReport(error, this.stateHistory);
+    let report = getReport(
+      error,
+      this.stateHistory.slice(-1*this.configObj.historyLimit)
+    );
     fetch(this.config.url, {
       method: 'post',
       headers: {
