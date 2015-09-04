@@ -1,4 +1,3 @@
-import fetch from 'fetch';
 import ErrorStackParser from 'error-stack-parser';
 
 function getReport(error, stateHistory) {

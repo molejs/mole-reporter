@@ -11,9 +11,6 @@ module.exports = {
     library: 'Mole'
 
   },
-  externals: {
-    'fetch': 'fetch'
-  },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },

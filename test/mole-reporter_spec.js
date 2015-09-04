@@ -1,5 +1,6 @@
 import expect from 'expect';
-import initMole from '../src/mole.js';
+import initMole from '../src/mole-reporter.js';
+
 
 let Mole;
 
