@@ -9,18 +9,21 @@ It's extremely easy to implement, especially with data-workflow handlers such as
 
 All the reported logs follow the **mole log specification**.
 
+## Requirements
+* [fetch](https://github.com/github/fetch)
+
 ## Install
 
-```
+```bash
 npm install --save mole-reporter
 ```
 
-## Configure and run
+## Usage
 
 The only configuration required is for setting the error-server url:
 
 ```javascript
-import Mole from 'mole-reporter'
+import Mole from 'mole-reporter';
 
 Mole.config({url: 'http://errors.example.com/mole'});
 
@@ -29,7 +32,7 @@ Mole.config({url: 'http://errors.example.com/mole'});
 To record errors, simply report them.
 
 ```javascript
-import Mole from 'mole-reporter'
+import Mole from 'mole-reporter';
 
 Mole.report(error);
 
@@ -38,7 +41,7 @@ Mole.report(error);
 In order to record app action-state history, record every action and state.
 
 ```javascript
-import Mole from 'mole-reporter'
+import Mole from 'mole-reporter';
 
 Mole.registerActionState(action, state);
 
@@ -48,7 +51,7 @@ Mole.registerActionState(action, state);
 
 Extra config options are self-explanatory (values in the example are defaults).
 ```javascript
-import Mole from 'mole-reporter'
+import Mole from 'mole-reporter';
 
 Mole.config({
     url: '',
