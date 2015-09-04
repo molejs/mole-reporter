@@ -12,7 +12,7 @@ All the reported logs follow the **mole log specification**.
 ## Install
 
 ```
-npm install --save mole.js
+npm install --save mole-reporter
 ```
 
 ## Configure and run
