@@ -7,13 +7,13 @@ var uglify = require('gulp-uglify');
 
 gulp.task('build-min', function () {
   browserify({
-    entries: 'src/mole.js',
+    entries: 'src/mole-reporter.js',
     standalone: 'Mole',
     debug: false
   })
     .transform(babelify)
     .bundle()
-    .pipe(source('mole.min.js'))
+    .pipe(source('mole-reporter.min.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('dist'));
@@ -21,13 +21,13 @@ gulp.task('build-min', function () {
 
 gulp.task('build', function () {
   browserify({
-    entries: 'src/mole.js',
+    entries: 'src/mole-reporter.js',
     standalone: 'Mole',
     debug: false
   })
     .transform(babelify)
     .bundle()
-    .pipe(source('mole.js'))
+    .pipe(source('mole-reporter.js'))
     .pipe(buffer())
     .pipe(gulp.dest('dist'));
 });
