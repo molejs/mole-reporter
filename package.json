@@ -4,7 +4,6 @@
   "description": "Library that aims to provide simple error reporting for js web apps such as single-page applications.",
   "main": "dist/mole-reporter.js",
   "scripts": {
-    "postinstall": "gulp build",
     "test": "mocha --compilers js:babel/register --recursive",
     "test:watch": "npm test -- --watch"
   },
