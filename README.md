@@ -1,4 +1,4 @@
-# mole-reporter [![Build Status](https://travis-ci.org/molejs/mole.js.svg?branch=master)](https://travis-ci.org/molejs/mole.js)
+# mole-reporter [![Build Status](https://travis-ci.org/molejs/mole-reporter.svg?branch=master)](https://travis-ci.org/molejs/mole-reporter)
 
 mole-reporter is one of the three independent packages that form the whole molejs service stack.
 It is a reporting library, that gathers action-states on a js application and reports
