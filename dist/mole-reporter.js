@@ -18549,13 +18549,20 @@ function getReport(error, stateHistory) {
     userAgent: navigator.userAgent,
     error: {
       message: error.message,
-      stack: _errorStackParser2['default'].parse(error)
+      stacktrace: _errorStackParser2['default'].parse(error).map(function (stackFrame) {
+        return {
+          'function': stackFrame.functionName,
+          file: stackFrame.fileName,
+          line: stackFrame.lineNumber,
+          column: stackFrame.columnNumber
+        };
+      })
     },
-    history: stateHistory
+    action_state_history: stateHistory
   };
 }
 
-exports['default'] = Mole = {
+var Mole = {
   stateHistory: [],
   configObj: {
     url: '',
@@ -18566,22 +18573,13 @@ exports['default'] = Mole = {
     if (!configObj.url) {
       throw new Error('No url defined.');
     }
-    if (configObj.stacktraceLimit) {
-      this.configObj.stacktraceLimit = configObj.stacktraceLimit;
-      Error.stackTraceLimit = this.configObj.stacktraceLimit;
-    }
-    if (configObj.historyLimit) {
-      this.configObj.historyLimit = configObj.historyLimit;
-    }
+    this.configObj = Object.assign({}, this.configObj, configObj);
   },
-  registerStateAction: function registerStateAction(state, action) {
-    this.stateHistory.push({
-      state: state,
-      action: action
-    });
+  registerActionState: function registerActionState(action, state) {
+    this.stateHistory.push({ action: action, state: state });
   },
   report: function report(error) {
-    var report = getReport(error, this.stateHistory);
+    var report = getReport(error, this.stateHistory.slice(-1 * this.configObj.historyLimit));
     (0, _fetch2['default'])(this.config.url, {
       method: 'post',
       headers: {
@@ -18592,6 +18590,8 @@ exports['default'] = Mole = {
     });
   }
 };
+
+exports['default'] = Mole;
 module.exports = exports['default'];
 
 },{"error-stack-parser":58,"fetch":61}]},{},[82])(82)
