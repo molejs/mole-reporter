@@ -12,7 +12,7 @@ describe('config method', () => {
   it('should update config values', () => {
     var url = 'foo';
     Mole.config({url});
-    expect(Mole.configObj.url).toEqual(url);
+    expect(Mole.__config.url).toEqual(url);
   });
 
   it('should throw error when calling config without setting url', () => {
