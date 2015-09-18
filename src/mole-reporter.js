@@ -37,7 +37,7 @@ const Mole = {
   report (error) {
     let report = getReport(
       error,
-      this.stateHistory.slice(-1*this.configObj.historyLimit)
+      this.stateHistory.slice(-1*this.__config.historyLimit)
     );
 
     fetch(this.__config.url, {
