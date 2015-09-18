@@ -7,7 +7,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'mole-reporter.js',
     publicPath: '/dist/',
-    libraryTarget: 'this',
+    libraryTarget: 'umd',
     library: 'Mole'
   },
   externals: {
