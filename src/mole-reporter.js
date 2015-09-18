@@ -20,7 +20,7 @@ function getReport(error, stateHistory) {
 
 const Mole = {
   stateHistory: [],
-  configObj: {
+  __config: {
     url: '',
     stacktraceLimit: 50,
     historyLimit: 10
@@ -29,7 +29,7 @@ const Mole = {
     if (!configObj.url) {
       throw new Error('No url defined.')
     }
-    this.configObj = Object.assign({}, this.configObj, configObj);
+    this.__config = Object.assign({}, this.__config, configObj);
   },
   registerActionState (action, state) {
     this.stateHistory.push({action, state});
@@ -39,7 +39,8 @@ const Mole = {
       error,
       this.stateHistory.slice(-1*this.configObj.historyLimit)
     );
-    fetch(this.config.url, {
+
+    fetch(this.__config.url, {
       method: 'post',
       headers: {
         'Accept': 'application/json',
