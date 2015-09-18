@@ -1,12 +1,13 @@
 {
   "name": "mole-reporter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Library that aims to provide simple error reporting for js web apps such as single-page applications.",
   "main": "dist/mole-reporter.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.config.js && ./node_modules/.bin/webpack --config webpack.config.min.js",
     "test": "mocha --compilers js:babel/register --recursive",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "error",
