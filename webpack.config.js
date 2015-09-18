@@ -7,9 +7,12 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'mole-reporter.js',
     publicPath: '/dist/',
-    libraryTarget: 'var',
+    libraryTarget: 'umd',
     library: 'Mole'
 
+  },
+  externals: {
+    'fetch': 'isomorphic-fetch'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
