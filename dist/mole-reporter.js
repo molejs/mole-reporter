@@ -103,7 +103,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.stateHistory.push({ action: action, state: state });
 	  },
 	  report: function report(error) {
-	    var report = getReport(error, this.stateHistory.slice(-1 * this.configObj.historyLimit));
+	    var report = getReport(error, this.stateHistory.slice(-1 * this.__config.historyLimit));
 	
 	    fetch(this.__config.url, {
 	      method: 'post',
