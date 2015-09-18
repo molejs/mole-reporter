@@ -51,4 +51,8 @@ const Mole = {
   }
 };
 
+if (typeof window !== 'undefined') {
+  window.Mole = Mole;
+}
+
 export default Mole;

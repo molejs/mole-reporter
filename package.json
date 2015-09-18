@@ -1,6 +1,6 @@
 {
   "name": "mole-reporter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library that aims to provide simple error reporting for js web apps such as single-page applications.",
   "main": "dist/mole-reporter.js",
   "scripts": {
