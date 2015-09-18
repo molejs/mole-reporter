@@ -1,4 +1,4 @@
-var Mole =
+this["Mole"] =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -53,10 +53,6 @@ var Mole =
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _fetch = __webpack_require__(3);
-	
-	var _fetch2 = _interopRequireDefault(_fetch);
-	
 	var _errorStackParser = __webpack_require__(1);
 	
 	var _errorStackParser2 = _interopRequireDefault(_errorStackParser);
@@ -99,7 +95,7 @@ var Mole =
 	  },
 	  report: function report(error) {
 	    var report = getReport(error, this.stateHistory.slice(-1 * this.configObj.historyLimit));
-	    (0, _fetch2['default'])(this.config.url, {
+	    fetch(this.config.url, {
 	      method: 'post',
 	      headers: {
 	        'Accept': 'application/json',
@@ -375,12 +371,6 @@ var Mole =
 	    return StackFrame;
 	}));
 
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	module.exports = fetch;
 
 /***/ }
 /******/ ]);
